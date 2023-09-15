@@ -30,15 +30,15 @@ document.addEventListener("keydown", handleKeyDown);
 document.addEventListener("keyup", handleKeyUp);
 
 function handleKeyDown(e) {
-  if (e.key == "Enter" && gameState != "Play") {
+  if ((e.key == "Enter" || e.key == "touchstart") && gameState != "Play") {
     restartGame();
-  } else if (e.key == "ArrowUp" || e.key == " ") {
+  } else if (e.key == "ArrowUp" || e.key == " " || e.key == "touchstart") {
     jump();
   }
 }
 
 function handleKeyUp(e) {
-  if (e.key == "ArrowUp" || e.key == " ") {
+  if (e.key == "ArrowUp" || e.key == " " || e.key == "touchstart") {
     resetJump();
   }
 }
