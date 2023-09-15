@@ -31,6 +31,7 @@ document.addEventListener("keyup", handleKeyUp);
 
 document.addEventListener("touchstart", handleTouchStart);
 
+document.addEventListener("touchend", handleTouchEnd);
 
 function handleKeyDown(e) {
   if (e.key == "Enter" && gameState != "Play") {
@@ -41,18 +42,22 @@ function handleKeyDown(e) {
 }
 
 function handleKeyUp(e) {
-  if (e.key == "ArrowUp" || e.key == " " ) {
+  if (e.key == "ArrowUp" || e.key == " ") {
     resetJump();
   }
 }
 
-//mobile
+// Mobile 
 function handleTouchStart() {
   if (gameState != "Play") {
     restartGame();
   } else {
     jump();
   }
+}
+
+function handleTouchEnd() {
+  resetJump();
 }
 
 function restartGame() {
