@@ -29,17 +29,29 @@ document.addEventListener("keydown", handleKeyDown);
 
 document.addEventListener("keyup", handleKeyUp);
 
+document.addEventListener("touchstart", handleTouchStart);
+
+
 function handleKeyDown(e) {
-  if ((e.key == "Enter" || e.key == "touchstart") && gameState != "Play") {
+  if (e.key == "Enter" && gameState != "Play") {
     restartGame();
-  } else if (e.key == "ArrowUp" || e.key == " " || e.key == "touchstart") {
+  } else if (e.key == "ArrowUp" || e.key == " ") {
     jump();
   }
 }
 
 function handleKeyUp(e) {
-  if (e.key == "ArrowUp" || e.key == " " || e.key == "touchstart") {
+  if (e.key == "ArrowUp" || e.key == " " ) {
     resetJump();
+  }
+}
+
+//mobile
+function handleTouchStart() {
+  if (gameState != "Play") {
+    restartGame();
+  } else {
+    jump();
   }
 }
 
