@@ -37,6 +37,40 @@
   border-radius: 10px;
 }
 
+.difficulty button{
+  height: 2.5rem;
+  width: 10rem;
+  border-radius: 10px;
+  padding: auto;
+  border-color: transparent;
+  color: white;
+  box-shadow:  rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.difficulty #easy {
+  background-color: #FEC17D;
+}
+
+.difficulty #easy:hover {
+  background-color: #fba441;
+}
+
+.difficulty #medium {
+  background-color: #FC8987;
+}
+
+.difficulty #medium:hover {
+  background-color: #fd6e6c;
+}
+
+.difficulty #legend {
+  background-color: #C17898;
+}
+
+.difficulty #legend:hover {
+  background-color: #c15181;
+}
+
 .message {
   position: absolute;
   display: flex;
@@ -51,7 +85,7 @@
   font-size: 4em;
   text-align: center;
   font-size: 2.4rem;
-  line-height: 3rem;
+  line-height: 4rem;
   padding: 30px;
 }
 
@@ -69,7 +103,7 @@
   align-items: center;
   opacity: 0.7;
   z-index: 10;
-  height: 10vh;
+  height: 5rem;
   font-size: 10vh;
   font-weight: 100;
   color: white;
@@ -97,7 +131,15 @@
     font-size: 10px;
     top: 50%;
     white-space: nowrap;
-    line-height: 1rem;
+    line-height: 2rem;
+  }
+
+  .difficulty button{
+    height: 1.5rem;
+    width: 6rem;
+    border-radius: 10px;
+    padding: auto;
+    font-size: 10px;
   }
 
   .messageStyle {
@@ -105,9 +147,16 @@
     font-size: 10px;
   }
 
-  .score {
-    font-size: 8vh;
+  .score_title {
+    height: 5rem;
+    font-size: 1.5rem;
   }
+  
+  .score_val {
+    height: 5rem;
+    font-size: 1.5rem;
+  }
+
   .bird {
     width: 15%;
     height: auto;

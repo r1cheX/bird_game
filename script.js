@@ -1,4 +1,4 @@
-const MOVE_SPEED = 3;
+let MOVE_SPEED = 3;
 const GRAVITY = 0.5;
 const PIPE_GAP = 35;
 const PIPE_SPAWN_INTERVAL = 115;
@@ -10,6 +10,12 @@ const backgroundImage = document
 
 const scoreValue = document.querySelector(".score_val");
 const message = document.querySelector(".message");
+
+const difficulty = document.querySelector(".difficulty");
+const easyButton = document.getElementById("easy");
+const mediumButton = document.getElementById("medium");
+const legendButton = document.getElementById("legend");
+
 const scoreTitle = document.querySelector(".score_title");
 const birdImage = document.getElementById("bird-1");
 
@@ -24,6 +30,22 @@ let gameState = "Start";
 let dieSoundPlayed = false;
 let bird_dy = 0;
 let pipeSeparation = 0;
+
+easyButton.addEventListener("click", function () {
+  MOVE_SPEED = 3;
+  restartGame();
+  console.log('debugging -->', MOVE_SPEED);
+});
+
+mediumButton.addEventListener("click", function () {
+  MOVE_SPEED = 15;
+  restartGame();
+});
+
+legendButton.addEventListener("click", function () {
+  MOVE_SPEED = 30;
+  restartGame();
+});
 
 document.addEventListener("keydown", handleKeyDown);
 
@@ -47,7 +69,7 @@ function handleKeyUp(e) {
   }
 }
 
-// Mobile 
+// Mobile
 function handleTouchStart() {
   if (gameState != "Play") {
     restartGame();
@@ -68,6 +90,7 @@ function restartGame() {
   message.innerHTML = "";
   scoreTitle.innerHTML = "Score: ";
   scoreValue.innerHTML = "0";
+  difficulty.style.display = "none";
   message.classList.remove("messageStyle");
   bird_dy = 0;
   play();
