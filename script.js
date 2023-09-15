@@ -34,7 +34,6 @@ let pipeSeparation = 0;
 easyButton.addEventListener("click", function () {
   MOVE_SPEED = 3;
   restartGame();
-  console.log('debugging -->', MOVE_SPEED);
 });
 
 mediumButton.addEventListener("click", function () {
@@ -43,6 +42,22 @@ mediumButton.addEventListener("click", function () {
 });
 
 legendButton.addEventListener("click", function () {
+  MOVE_SPEED = 30;
+  restartGame();
+});
+
+// MOBILE
+easyButton.addEventListener("touchstart", function () {
+  MOVE_SPEED = 3;
+  restartGame();
+});
+
+mediumButton.addEventListener("touchstart", function () {
+  MOVE_SPEED = 15;
+  restartGame();
+});
+
+legendButton.addEventListener("touchstart", function () {
   MOVE_SPEED = 30;
   restartGame();
 });
