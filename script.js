@@ -7,6 +7,7 @@ const bird = document.querySelector(".bird");
 const backgroundImage = document
   .querySelector(".background")
   .getBoundingClientRect();
+  
 
 const scoreValue = document.querySelector(".score_val");
 const message = document.querySelector(".message");
@@ -15,6 +16,7 @@ const difficulty = document.querySelector(".difficulty");
 const easyButton = document.getElementById("easy");
 const mediumButton = document.getElementById("medium");
 const legendButton = document.getElementById("legend");
+const godButton = document.getElementById("god");
 
 const scoreTitle = document.querySelector(".score_title");
 const birdImage = document.getElementById("bird-1");
@@ -46,6 +48,11 @@ legendButton.addEventListener("click", function () {
   restartGame();
 });
 
+godButton.addEventListener("click", function () {
+  MOVE_SPEED = 50;
+  restartGame();
+});
+
 // MOBILE
 easyButton.addEventListener("touchstart", function () {
   MOVE_SPEED = 3;
@@ -59,6 +66,11 @@ mediumButton.addEventListener("touchstart", function () {
 
 legendButton.addEventListener("touchstart", function () {
   MOVE_SPEED = 30;
+  restartGame();
+});
+
+godButton.addEventListener("touchstart", function () {
+  MOVE_SPEED = 50;
   restartGame();
 });
 

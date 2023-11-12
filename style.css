@@ -70,6 +70,13 @@
 .difficulty #legend:hover {
   background-color: #c15181;
 }
+.difficulty #god {
+  background-color: rgb(45, 96, 235);
+}
+
+.difficulty #god:hover {
+  background-color: rgb(30, 0, 227);
+}
 
 .message {
   position: absolute;
